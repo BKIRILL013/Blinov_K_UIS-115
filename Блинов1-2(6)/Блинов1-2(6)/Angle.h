@@ -11,6 +11,22 @@ private:
 	 \brief	Устанавливает верные значения для угла
 	 */
 	void set_normal_angle(const double degree, const double minute);
+	/**
+	 \brief	костанта для градусов
+	 */
+	const double D_60 = 60;
+	/**
+	 \brief	костанта для перевода в радианы
+	 */
+	const double D_57 = 57.2958;
+	/**
+	 \brief	костанта: минимальный градус
+	 */
+	const double MIN_DEGREE = 0;
+		/**
+	 \brief	костанта: минимальный градус
+	 */
+	const double MAX_DEGREE = 360;
 public:
 	/**
 	 \brief	Конструктор с параметрами
