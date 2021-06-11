@@ -2,7 +2,7 @@
 
 void Angle::set_normal_angle(const double degree, const double minute)
 {
-	if (degree >= 0 && degree <= 360 && minute >= 0 && (degree + minute / 60.0) <= 360)
+	if (degree >= MIN_DEGREE&& degree <= MAX_DEGREE&& minute >= MIN_MINUTE&& (degree + minute / 60.0) <= MAX_DEGREE)
 	{
 		this->degree = degree;
 		this->minute = minute;
@@ -54,7 +54,7 @@ bool Angle::operator== (const Angle& other)
 }
 bool Angle::operator> (const Angle& other)
 {
-	if (this->get_degree() > other.get_degree())
+	if ((this->get_degree() - other.get_degree()) < )
 	{
 		return true;
 	}
