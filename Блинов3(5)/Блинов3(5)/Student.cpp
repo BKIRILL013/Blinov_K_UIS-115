@@ -2,7 +2,7 @@
 
 void Student::set_correct_year(const unsigned int year)
 {
-	if (year <= 5)
+	if (year <= YEAR_5)
 	{
 		this->year = year;
 	}
