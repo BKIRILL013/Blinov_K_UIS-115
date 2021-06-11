@@ -46,7 +46,7 @@ double Angle::get_sin()const
 }
 bool Angle::operator== (const Angle& other)
 {
-	if ((this->get_degree()  other.get_degree()) < numeric_limits<double>::epsilon())
+	if ((this->get_degree() - other.get_degree()) < numeric_limits<double>::epsilon())
 	{
 		return true;
 	}
