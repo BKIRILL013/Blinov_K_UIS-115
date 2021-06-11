@@ -8,6 +8,10 @@ private:
 	 \brief	Устанавливает верные года обучения
 	 */
 	void set_correct_year(const unsigned int year);
+	/**
+	 \brief	Константа для проверки годов обучения
+	 */
+	 const double YEAR_5 = 5;
 public:
 	/**
 	 \brief	Конструктор с параметрами
