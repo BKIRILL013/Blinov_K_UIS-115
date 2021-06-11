@@ -2,7 +2,7 @@
 
 void Angle::set_normal_angle(const double degree, const double minute)
 {
-	if (degree >= MIN_DEGREE&& degree <= MAX_DEGREE&& minute >= MIN_MINUTE&& (degree + minute / 60.0) <= MAX_DEGREE)
+	if (degree >= MIN_DEGREE&& degree <= MAX_DEGREE&& minute >= MIN_MINUTE&& (degree + minute / D_60) <= MAX_DEGREE)
 	{
 		this->degree = degree;
 		this->minute = minute;
@@ -30,15 +30,15 @@ ostream& operator<<(ostream& out, const Angle& angle)
 }
 double Angle::get_degree()const
 {
-	return degree + minute / 60.0;
+	return degree + minute / D_60;
 }
 double Angle::get_minute()const
 {
-	return degree * 60.0 + minute;
+	return degree * D_60 + minute;
 }
 double Angle::get_radian() const
 {
-	return (degree + minute / 60.0) / 57.3;
+	return (degree + minute / D_60) / D_57;
 }
 double Angle::get_sin()const
 {
@@ -46,7 +46,7 @@ double Angle::get_sin()const
 }
 bool Angle::operator== (const Angle& other)
 {
-	if (this->get_degree() == other.get_degree())
+	if ((this->get_degree()  other.get_degree()) < numeric_limits<double>::epsilon())
 	{
 		return true;
 	}
@@ -54,7 +54,7 @@ bool Angle::operator== (const Angle& other)
 }
 bool Angle::operator> (const Angle& other)
 {
-	if ((this->get_degree() - other.get_degree()) < )
+	if ((this->get_degree() > other.get_degree()))
 	{
 		return true;
 	}
